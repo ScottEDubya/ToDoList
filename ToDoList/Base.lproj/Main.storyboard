@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--First-->
+        <!--Todo List-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,18 +18,18 @@
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bX2-km-JSN">
-                                <rect key="frame" x="-1" y="20" width="376" height="598"/>
+                                <rect key="frame" x="-1" y="20" width="737" height="345"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="todoTableCell" id="5iY-1O-xvZ">
-                                        <rect key="frame" x="0.0" y="28" width="376" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="737" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5iY-1O-xvZ" id="wNC-ec-ENh">
-                                            <rect key="frame" x="0.0" y="0.0" width="376" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="737" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -48,7 +48,7 @@
                             <constraint firstItem="bX2-km-JSN" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="v0G-vH-h0N"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Todo List" image="first" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="todoTableView" destination="bX2-km-JSN" id="7eU-uy-fKf"/>
                     </connections>
@@ -57,7 +57,7 @@
             </objects>
             <point key="canvasLocation" x="750" y="-312"/>
         </scene>
-        <!--Second-->
+        <!--Add-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
@@ -66,13 +66,15 @@
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aqW-6p-Exo">
-                                <rect key="frame" x="135" y="317" width="104" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aqW-6p-Exo">
+                                <rect key="frame" x="315.66666666666669" y="190" width="105" height="34"/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="105" id="qnL-aW-HUD"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Add Item">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -81,24 +83,41 @@
                                     <action selector="addItemButton:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="xJG-gd-zTF"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter the item you want to add!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rup-m3-lvW">
-                                <rect key="frame" x="67" y="222" width="244" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the item you want to add!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rup-m3-lvW">
+                                <rect key="frame" x="245.66666666666669" y="124" width="245.00000000000006" height="20.666666666666643"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="245" id="V3Z-Rw-AOM"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vxF-yF-pm6">
-                                <rect key="frame" x="67" y="279" width="241" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vxF-yF-pm6">
+                                <rect key="frame" x="245.66666666666669" y="151.66666666666663" width="245.00000000000006" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="245" id="yGJ-30-3zE"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="go"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="aqW-6p-Exo" firstAttribute="top" secondItem="vxF-yF-pm6" secondAttribute="bottom" constant="8.5" id="2Nt-e7-iTA"/>
+                            <constraint firstItem="aqW-6p-Exo" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="54u-Zp-xkp"/>
+                            <constraint firstItem="vxF-yF-pm6" firstAttribute="top" secondItem="Rup-m3-lvW" secondAttribute="bottom" constant="7" id="5dJ-2H-CHV"/>
+                            <constraint firstItem="vxF-yF-pm6" firstAttribute="top" secondItem="Rup-m3-lvW" secondAttribute="bottom" constant="7" id="8Go-fe-4CO"/>
+                            <constraint firstItem="aqW-6p-Exo" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="AW0-Fh-65d"/>
+                            <constraint firstItem="aqW-6p-Exo" firstAttribute="centerY" secondItem="QS5-Rx-YEW" secondAttribute="centerY" id="NJy-3a-k6U"/>
+                            <constraint firstItem="aqW-6p-Exo" firstAttribute="top" secondItem="vxF-yF-pm6" secondAttribute="bottom" constant="8.5" id="ROn-Lx-UBM"/>
+                            <constraint firstItem="vxF-yF-pm6" firstAttribute="top" secondItem="Rup-m3-lvW" secondAttribute="bottom" constant="7" id="d0z-LI-uRU"/>
+                            <constraint firstItem="Rup-m3-lvW" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="fCA-x8-5kD"/>
+                            <constraint firstItem="vxF-yF-pm6" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="fmJ-pw-VMv"/>
+                            <constraint firstItem="aqW-6p-Exo" firstAttribute="top" secondItem="vxF-yF-pm6" secondAttribute="bottom" constant="8.5" id="k0S-so-bhp"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Add" image="second" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="newItemLabel" destination="Rup-m3-lvW" id="hGa-s8-bbq"/>
                         <outlet property="newItemNameTextField" destination="vxF-yF-pm6" id="g5U-8z-hJX"/>
